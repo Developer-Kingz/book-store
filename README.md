@@ -30,9 +30,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To Do List] <a name="math magician"></a>
+# 📖 [Book Store] <a name="Book store"></a>
 
-**["Maths magician"]** in this project im learning how to work with React by buiding a functional calculator
+**["Book Store"]** in this project im learning how to work with React by buiding a book store with CRUD operation
 
 ## 🛠 Built With <a name="built-with">React</a>
 
@@ -68,7 +68,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/Developer-Kingz/maths-magician.git
+git clone https://github.com/Developer-Kingz/book-store.git
 
 ### Install
 
