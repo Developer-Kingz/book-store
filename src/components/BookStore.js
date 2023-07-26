@@ -22,6 +22,7 @@ const BookStore = () => {
   ];
 
   const id = books.length + 1;
+
   const handleAddBook = () => {
     dispatch(
       addBook({
@@ -36,8 +37,8 @@ const BookStore = () => {
     setCategory('');
   };
 
-  const handleRemoveBook = (id) => {
-    dispatch(removeBook({ id }));
+  const handleRemoveBook = (itemId) => {
+    dispatch(removeBook({ itemId }));
   };
 
   return (

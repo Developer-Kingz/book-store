@@ -34,7 +34,7 @@ ul {
 
 .bookstore {
   width: 95vw;
-  height: 150vh;
+  height: auto;
   margin: auto;
   border: 1px solid black;
 }

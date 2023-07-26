@@ -30,7 +30,7 @@ export const booksSlice = createSlice({
       state.books = [
         ...state.books,
         {
-          id: Math.floor(Math.random() * 100),
+          item_id: Math.floor(Math.random() * 100),
           title: action.payload.title,
           author: action.payload.author,
           category: action.payload.category,
@@ -39,7 +39,7 @@ export const booksSlice = createSlice({
     },
     removeBook: (state, action) => {
       state.books = state.books.filter(
-        (book) => book.item_id !== action.item_id,
+        (book) => book.item_id !== action.payload.itemId,
       );
     },
   },
