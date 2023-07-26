@@ -33,6 +33,7 @@ export const booksSlice = createSlice({
           id: Math.floor(Math.random() * 100),
           title: action.payload.title,
           author: action.payload.author,
+          category: action.payload.category,
         },
       ];
     },

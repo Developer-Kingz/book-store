@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Dropdown from 'react-dropdown';
 import Navbar from './Navbar';
 import { addBook, removeBook } from '../redux/books/booksSlice';
+import 'react-dropdown/style.css';
 
 const BookStore = () => {
   const { books } = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+
+  const options = [
+    'Actions',
+    'Science Fiction',
+    'Economy',
+    'Fiction',
+    'NonFiction',
+  ];
+
+  const id = books.length + 1;
   const handleAddBook = () => {
     dispatch(
       addBook({
-        item_id: '4',
-        title: 'Awesome book',
-        author: 'Kingsley Igbor',
+        item_id: `item${id}`,
+        title,
+        author,
+        category,
       }),
     );
+    setTitle('');
+    setAuthor('');
+    setCategory('');
   };
 
   const handleRemoveBook = (id) => {
@@ -54,19 +73,30 @@ const BookStore = () => {
               type="text"
               placeholder="Book title"
               className="book-input"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
-            <select name="" id="" className="book-select">
-              <option value="">Action</option>
-              <option value="">Science Fiction</option>
-              <option value="">Economy</option>
-            </select>
-            <button
-              className="add-btn"
-              type="button"
-              onClick={handleAddBook}
-            >
-              ADD BOOK
-            </button>
+            <input
+              type="text"
+              placeholder="Author"
+              className="book-input"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
+            <div>
+              <Dropdown
+                options={options}
+                value={category}
+                onChange={(selectedOptions) => setCategory(selectedOptions.value)}
+              />
+              <button
+                className="add-btn"
+                type="button"
+                onClick={handleAddBook}
+              >
+                ADD BOOK
+              </button>
+            </div>
           </form>
         </div>
       </div>
