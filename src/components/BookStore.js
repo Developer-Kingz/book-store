@@ -1,40 +1,46 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Navbar from './Navbar';
+import { addBook, removeBook } from '../redux/books/booksSlice';
 
 const BookStore = () => {
-  const lists = [
-    {
-      header: 'Action',
-      title: 'The Hunger Games',
-      name: 'Susanne Collins',
-    },
-    {
-      header: 'Action',
-      title: 'The Hunger Games',
-      name: 'Susanne Collins',
-    },
-    {
-      header: 'Action',
-      title: 'The Hunger Games',
-      name: 'Susanne Collins',
-    },
-  ];
+  const { books } = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  const handleAddBook = () => {
+    dispatch(
+      addBook({
+        item_id: '4',
+        title: 'Awesome book',
+        author: 'Kingsley Igbor',
+      }),
+    );
+  };
+
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook({ id }));
+  };
 
   return (
     <div>
       <Navbar />
       <div className="bookstore">
         <div className="book-center">
-          {lists.map((list) => (
-            <div className="books" key={list.id}>
+          {books.map((book) => (
+            <div className="books" key={book.item_id}>
               <div className="book-left">
-                <p>{list.header}</p>
-                <h1>{list.title}</h1>
-                <p>{list.name}</p>
+                <p>{book.category}</p>
+                <h1>{book.title}</h1>
+                <p>{book.author}</p>
               </div>
               <div className="book-actions">
                 <button type="button">Comments</button>
-                <button type="button">Remove</button>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveBook(book.item_id)}
+                >
+                  Remove
+                </button>
                 <button type="button">Edit</button>
               </div>
             </div>
@@ -54,7 +60,11 @@ const BookStore = () => {
               <option value="">Science Fiction</option>
               <option value="">Economy</option>
             </select>
-            <button className="add-btn" type="button">
+            <button
+              className="add-btn"
+              type="button"
+              onClick={handleAddBook}
+            >
               ADD BOOK
             </button>
           </form>
