@@ -134,6 +134,7 @@ const BookStore = () => {
               <Dropdown
                 options={options}
                 value={category}
+                className="book-select"
                 onChange={(selectedOptions) => setCategory(selectedOptions.value)}
               />
               <button

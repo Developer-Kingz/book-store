@@ -38,6 +38,8 @@
 
 .head-logo {
   color: #0290ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 ul {
@@ -52,22 +54,32 @@ ul {
   text-decoration: none;
   font-size: 1vw;
   color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .book-cat {
   color: #d8d8d8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .book-title {
   color: #121212;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
 }
 
 .book-auth {
-  color: #4386bf;
+  color: #92b9da;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
 }
 
 .book-btn {
-  color: #4386bf;
+  color: #92b9da;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   border: none;
   margin-right: 4%;
   padding-right: 4%;
@@ -80,7 +92,7 @@ ul {
   height: auto;
   margin: auto;
   padding-top: 3vh;
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(250, 250, 250);
 }
 
 .book-center {
@@ -111,6 +123,7 @@ ul {
   width: 30%;
   margin-top: 3vh;
   margin-left: 2vw;
+  color: #92b9da;
 }
 
 .add-new {
@@ -134,19 +147,25 @@ ul {
 
 .book-input {
   width: 30vw;
-  height: 6vh;
+  height: 5vh;
   margin-right: 3%;
+  border-radius: 4px;
+  padding-left: 1vw;
+  border: 1px solid rgb(215, 215, 215);
 }
 
 .book-select {
-  width: 20vw;
-  height: 6vh;
+  width: 30vw;
+  margin-right: 3%;
+  border-radius: 8px;
 }
 
 .add-btn {
-  padding: 1.8vh 4vw;
-  background-color: rgb(81, 81, 255);
+  width: 20%;
+  height: 5.5vh;
+  background-color: #0290ff;
   border: none;
+  font-size: 1vw;
   border-radius: 5px;
   color: white;
 }
@@ -170,6 +189,8 @@ ul {
 
 .show-progress p {
   color: #c6c6c6;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .progress-circle {
