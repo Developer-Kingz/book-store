@@ -68,52 +68,73 @@ const BookStore = () => {
   });
 
   return (
-    <div>
+    <div className="book-container">
       <Navbar />
       <div className="bookstore">
         <div className="book-center">
           {bookArr.map((book) => (
             <div className="books" key={book.id}>
               <div className="book-left">
-                <p>{book.category}</p>
-                <h1>{book.title}</h1>
-                <p>{book.author}</p>
+                <p className="book-cat">{book.category}</p>
+                <h1 className="book-title">{book.title}</h1>
+                <p className="book-auth">{book.author}</p>
               </div>
               <div className="book-actions">
-                <button type="button">Comments</button>
+                <button type="button" className="book-btn">
+                  Comments
+                </button>
                 <button
                   type="button"
+                  className="book-btn"
                   onClick={() => handleRemoveBook(book.id)}
                 >
                   Remove
                 </button>
-                <button type="button">Edit</button>
+                <button type="button" className="book-btn">
+                  Edit
+                </button>
+              </div>
+              <div className="progress">
+                <div className="progress-circle" />
+                <div className="show-progress">
+                  <h1>64%</h1>
+                  {' '}
+                  <p>completed</p>
+                </div>
+              </div>
+              <div className="chapter">
+                <p className="book-cat">CURRENT CHAPTER</p>
+                <p className="chapt">Chapter 17</p>
+                <button type="button" className="progress-btn">
+                  UPDATE PROGRESS
+                </button>
               </div>
             </div>
           ))}
 
-          <span className="add-new">
-            <h1>ADD NEW BOOK</h1>
-          </span>
-          <form className="input-form">
-            <input
-              type="text"
-              placeholder="Book title"
-              className="book-input"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Author"
-              className="book-input"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-            />
-            <div>
+          <div className="input-cont">
+            <span className="add-new">
+              <h1>ADD NEW BOOK</h1>
+            </span>
+            <form className="input-form">
+              <input
+                type="text"
+                placeholder="Book title"
+                className="book-input"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Author"
+                className="book-input"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
               <Dropdown
                 options={options}
                 value={category}
+                className="book-select"
                 onChange={(selectedOptions) => setCategory(selectedOptions.value)}
               />
               <button
@@ -123,8 +144,8 @@ const BookStore = () => {
               >
                 ADD BOOK
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

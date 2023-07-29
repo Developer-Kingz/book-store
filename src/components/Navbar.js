@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Navbar = () => (
   <div className="navbar">
@@ -9,13 +10,16 @@ const Navbar = () => (
         <h1>Bookstore CMS</h1>
       </span>
       <ul>
-        <NavLink to="/">
-          <li>BOOKS</li>
+        <NavLink to="/book-store" className="link-style">
+          BOOKS
         </NavLink>
-        <NavLink to="/category">
-          <li>CATEGORIES</li>
+        <NavLink to="/category" className="link-style">
+          CATEGORIES
         </NavLink>
       </ul>
+      <div className="user-circle">
+        <FontAwesomeIcon icon="user" className="custom-icon" />
+      </div>
     </div>
   </div>
 );
